@@ -21,7 +21,7 @@ class MovieListCreate(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class MovieRetrieveUpdateDelete(generics):
+class MovieRetrieveUpdateDelete(APIView):
     def get_object(self, pk):
         return get_object_or_404(Movie, pk=pk)
 
